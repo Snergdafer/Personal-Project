@@ -1,4 +1,4 @@
-INSERT INTO users (
+INSERT INTO youser (
     email,
     username,
     password

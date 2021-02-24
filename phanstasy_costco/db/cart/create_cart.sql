@@ -1,7 +1,6 @@
 INSERT INTO cart (
-    user_id,
-    active
+    user_id
 )VALUES(
-    $1,
-    'true'
-);
+    $1
+)RETURNING *
+WHERE user_id = $1;

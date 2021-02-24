@@ -1,4 +1,5 @@
 INSERT INTO items (
+    item_name,
     item_type,
     item_attributes,
     item_image,
@@ -9,5 +10,7 @@ INSERT INTO items (
     $2,
     $3,
     $4,
-    $5
-);
+    $5,
+    $6
+)
+RETURNING *;
