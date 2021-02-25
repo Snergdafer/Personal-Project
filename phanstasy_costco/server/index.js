@@ -51,6 +51,7 @@ app.put('/items/update', item.updateItem)
 app.post('/cart/new', cart.makeCart)
 app.post('/cart/add/:id', cart.addToCart)
 app.delete('/cart/remove/:id', cart.deleteFromCart)
+app.get('/cart/get', cart.getCart)
 
 
 app.listen(SERVER_PORT, () => console.log(`server listening on port ${SERVER_PORT}`))
