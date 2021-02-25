@@ -4,5 +4,4 @@ INSERT INTO cart(
 )VALUES(
     $1,
     $2
-)RETURNING *
-WHERE user_id = $1;
+)RETURNING *;

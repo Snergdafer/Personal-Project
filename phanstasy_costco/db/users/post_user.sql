@@ -7,3 +7,4 @@ INSERT INTO youser (
     $2,
     $3
 )
+RETURNING *;

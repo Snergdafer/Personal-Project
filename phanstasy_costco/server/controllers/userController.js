@@ -25,7 +25,7 @@ module.exports = {
         if (!findUser) {
             return res.status(401).send('Username or Password incorrect')
         }
-        const authenticated = bcrypt.compareSync(password, foundUser.passowrd)
+        const authenticated = bcrypt.compareSync(password, findUser.password)
         if(authenticated) {
             req.session.user = {
                 userId: findUser.user_id,
@@ -52,6 +52,7 @@ module.exports = {
         const db = req.app.get('db')
         const {newUsername, newEmail, email} = req.body
         const [findUser] = await db.users.get_user(email)
+        console.log(findUser)
         const userId = findUser.user_id
         const [findDuplicate] = await db.users.get_user(newEmail)
         if(findDuplicate) {

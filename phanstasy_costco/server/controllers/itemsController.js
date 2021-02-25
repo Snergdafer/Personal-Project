@@ -39,7 +39,7 @@ module.exports = {
     updateItem: async(req, res) => {
         const db = req.app.get('db')
         const {name, type, attributes, image, description, cost, id} = req.body
-        const items = await db.items.update_item(name, type, attributes, image, description, cost, id)
+        const items = await db.items.update_items(name, type, attributes, image, description, cost, id)
         res.status(200).send(items)
     }
 }
