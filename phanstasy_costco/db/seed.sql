@@ -7,7 +7,7 @@ CREATE TABLE youser (
 
 CREATE TABLE items (
     item_id SERIAL PRIMARY KEY,
-    item_name VARCHAR(50)
+    item_name VARCHAR(50),
     item_type VARCHAR(25),
     item_attributes VARCHAR(150),
     item_image VARCHAR(3000),

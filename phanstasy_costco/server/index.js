@@ -42,9 +42,9 @@ app.put('/auth/update', user.changeUserInfo)
 app.get('/items/all', item.getItems)
 app.get('/items/type', item.getItemType)
 app.get('/items/attribute', item.getItemAttribute)
-app.get('/item/cost', item.getItemCost)
-app.post('/item/add', item.createItem)
-app.delete('/item/remove/:id', item.deleteItem)
+app.get('/items/cost', item.getItemCost)
+app.post('/items/add', item.createItem)
+app.delete('/items/remove/:id', item.deleteItem)
 app.put('/items/update', item.updateItem)
 
 //cart endpoints
