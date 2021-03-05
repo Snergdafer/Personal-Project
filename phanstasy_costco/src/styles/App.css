@@ -1,0 +1,20 @@
+.App {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.menu {
+  position: absolute;
+  left: -300px;
+}
+
+.active {
+  -webkit-transform: translate(300px, 0);
+          transform: translate(300px, 0);
+}
+/*# sourceMappingURL=App.css.map */

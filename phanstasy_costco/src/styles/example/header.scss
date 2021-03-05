@@ -1,0 +1,33 @@
+// these are variables
+$button: rgb(0, 123, 194);
+$headerBackground: rgb(25, 25, 24);
+
+// this imports the _words.scss file
+@import "./words";
+
+// this is a function of sorts. The $direction is a variable we can set
+// when it is called
+@mixin flexCenter($direction, $background) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $direction;
+    background-color: $background;
+}
+
+header {
+    @include flexCenter(row, $headerBackground);
+    button {
+        background-color: $button;
+        &:hover {
+            background-color: purple;
+        }
+    }
+}
+
+// @extend causes menu to inherit all styles from header
+menu {
+    @extend header;
+}
+
+// import header.css to the file you want to style

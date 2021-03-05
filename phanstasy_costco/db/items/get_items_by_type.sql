@@ -1,2 +1,2 @@
 SELECT * FROM items
-WHERE item_type IN ($1);
+WHERE item_type LIKE (%$1%);

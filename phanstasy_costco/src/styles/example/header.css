@@ -1,0 +1,29 @@
+h1 {
+  font-style: italic;
+}
+
+header, menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #191918;
+}
+
+header button, menu button {
+  background-color: #007bc2;
+}
+
+header button:hover, menu button:hover {
+  background-color: purple;
+}
+/*# sourceMappingURL=header.css.map */

@@ -1,0 +1,13 @@
+.App {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu {
+    position: absolute;
+    left: -300px; 
+}
+
+.active {
+    transform: translate(300px, 0);
+}

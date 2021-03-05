@@ -1,9 +1,12 @@
 import React from 'react'
 
-const Item = () => {
+const Item = (props) => {
+    
+
     return (
-        <div className="Auth">
-            <h1>Item Component</h1>
+        <div className="ItemCard">
+            <h4>{props.item.item_name}</h4>
+            <img src={props.item.item_image}/>
         </div>
     )
 }
