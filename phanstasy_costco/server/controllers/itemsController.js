@@ -8,7 +8,8 @@ module.exports = {
     },
     getItem: async(req, res) => {
         const db = req.app.get('db')
-        const item = await db.items.get_item(id)
+        const id = req.params.id
+        const [item] = await db.items.get_item(id)
         res.status(200).send(item)
     },
     getItemType: async(req, res) => {

@@ -8,16 +8,14 @@ function App() {
   const [toggle, setToggle] = useState(false)
 
   const propsToggle = () => {
-    console.log('stuff')
     setToggle(!toggle)
   }
 
-  console.log(Header)
 
   return (
     <div className="App">
-      <Header switch={propsToggle}/>
-      <Menu toggle={toggle}/>
+      <Header switch={propsToggle} toggle={toggle}/>
+      <Menu toggle={toggle} switch={propsToggle}/>
       {routes}
     </div>
   );

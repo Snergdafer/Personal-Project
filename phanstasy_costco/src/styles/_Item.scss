@@ -1,0 +1,20 @@
+
+@import './mixIns';
+
+.ItemCard {
+    margin: 10px;
+    border: 2px outset lightgrey;
+    box-shadow: 5px, 5px, grey;
+    width: 20vw;
+    height: 20vw;
+    overflow: hidden;
+    @include flexCenter(column, space-between);
+    h4{
+        font-size: 20px;
+    }
+    img {
+        width: 10vw;
+        margin: auto;
+    }
+}
+

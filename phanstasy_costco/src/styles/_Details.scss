@@ -1,0 +1,9 @@
+
+@import './mixIns';
+
+.ItemDetails {
+    @include flexCenter(column, center);
+    img {
+        width: 50vw;
+    }
+}

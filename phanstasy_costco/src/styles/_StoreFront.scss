@@ -1,0 +1,8 @@
+
+@import './mixIns';
+
+.Store {
+    display: flex;
+    flex-wrap: wrap;
+    @include flexCenter(row, center);
+}

@@ -5,24 +5,25 @@ import axios from 'axios'
 const StoreFront = () => {
     const [items, setItems] = useState([])
     
-    useEffect(() => {
-        axios.get('/items/all').then( res => {
-            setItems(res.data)
-        })
-    })
+    useEffect( async () => {
+        try{
+        const response = await axios.get('/items/all')
+        setItems(response.data)
+        }catch{
+            console.log('error')
+        }
+    }, [])
 
-    const merchandise = () => {
-        items.map(elem => {
-            <>
-                <Item item={elem}/>
-            </>
-        })
-    }
+  
 
+    
     return (
         <div className="Store">
-            <h1>Store Front Component</h1>
-            {merchandise()}
+            {items.map(elem => (
+                <>
+                    <Item item={elem}/>
+                </>
+            ))}
         </div>
     )
 }

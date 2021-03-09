@@ -1,15 +1,20 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
-const  AccountDetails = () => {
-    
+
+
+const  AccountDetails = (props) => {
+    console.log(props)
+    const {username, email} = props.userReducer.user
     return (
         <div className="Auth">
-            <h1>Username</h1>
-            <h1>Class</h1>
-            <h1>Race</h1>
+            <h1>{username}</h1>
+            <h1>{email}</h1>
             <button>Change Password</button>
         </div>
     )
 }
 
-export default AccountDetails
+const mapStateToProps = state => state
+
+export default connect(mapStateToProps)(AccountDetails)
