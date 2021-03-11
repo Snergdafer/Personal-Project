@@ -1,11 +1,17 @@
-import React, {useState} from 'react'
+import React, {useEffect} from 'react'
 import axios from 'axios'
 import {withRouter, Link} from 'react-router-dom'
 import {logoutUser} from '../redux/userReducer'
-import {updateSearch} from '../redux/itemsReducer'
+import UpdateStore from '../hooks/UpdateStore'
+import updateSearch from '../redux/itemsReducer'
 import {connect} from 'react-redux'
 
 const Menu = (props) => {
+    const [items, setTerms] = UpdateStore()
+
+    useEffect(() => {
+        updateSearch(items)
+    },[items])
     
     const logout = async () => {
         await axios.post('/auth/logout')
@@ -13,29 +19,30 @@ const Menu = (props) => {
         props.history.push('/')
     }
 
-    
+    // set terms will return items^^^. I then need to set items to
+    // redux state
 
     return(
         <div className={`menu ${props.toggle ? 'active' : ''}`}>
             <div className={'section all'}>
-                <button onClick={() => props.updateSearch('All')}>All Items</button>
+                <button onClick={() => setTerms('All')}>All Items</button>
             </div>
             <div className={'section armor'}>
-                <button onClick={() => props.updateSearch('Armor')}>Armor</button>
-                <button onClick={() => props.updateSearch('Light')}>Light Armor</button>
-                <button onClick={() => props.updateSearch('Medium')}>Medium Armor</button>
-                <button onClick={() => props.updateSearch('Heavy')}>Heavy Armor</button>
+                <button onClick={() => setTerms('Armor')}>Armor</button>
+                <button onClick={() => setTerms('Light')}>Light Armor</button>
+                <button onClick={() => setTerms('Medium')}>Medium Armor</button>
+                <button onClick={() => setTerms('Heavy')}>Heavy Armor</button>
             </div>
             <div className={'section weapons'}>
-                <button onClick={() => props.updateSearch('Weapon')}>Weapons</button>
-                <button onClick={() => props.updateSearch('Bludgeoning')}>Bludgeoning Weapons</button>
-                <button onClick={() => props.updateSearch('Slashing')}>Slashing Weapons</button>
-                <button onClick={() => props.updateSearch('Ranged')}>Ranged Weapons</button>
+                <button onClick={() => setTerms('Weapon')}>Weapons</button>
+                <button onClick={() => setTerms('Bludgeoning')}>Bludgeoning Weapons</button>
+                <button onClick={() => setTerms('Slashing')}>Slashing Weapons</button>
+                <button onClick={() => setTerms('Ranged')}>Ranged Weapons</button>
             </div>
             <div className={'section misc'}>
-                <button onClick={() => props.updateSearch('Adventure')}>Adventure</button>
-                <button onClick={() => props.updateSearch('Bundle')}>Bundles</button>
-                <button onClick={() => props.updateSearch('Magic')}>Magic Items</button>
+                <button onClick={() => setTerms('Adventure')}>Adventure</button>
+                <button onClick={() => setTerms('Bundle')}>Bundles</button>
+                <button onClick={() => setTerms('Magic')}>Magic Items</button>
             </div>
             <div className={'section user'}>
                 <Link to='/cart'>
@@ -43,7 +50,6 @@ const Menu = (props) => {
                 </Link>
                 <button onClick={() => {
                     logout()
-                    props.updateSearch('')
                     props.switch()
                 }}>Logout</button>
             </div>

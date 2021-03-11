@@ -16,14 +16,14 @@ module.exports = {
 
     getItemType: async(req, res) => {
         const db = req.app.get('db')
-        const {terms} = req.body
+        const {terms} = req.params
         console.log(req.body)
         const items = await db.items.get_items_by_type(terms)
         res.status(200).send(items)
     },
     getItemAttribute: async(req, res) => {
         const db = req.app.get('db')
-        const {terms} = req.body
+        const {terms} = req.params
         console.log(req.body)
         const items = await db.items.get_items_by_attribute(terms)
         res.status(200).send(items)    

@@ -5,7 +5,7 @@ const session = require('express-session')
 const user = require('./controllers/userController')
 const item = require('./controllers/itemsController')
 const cart = require('./controllers/cartController')
-
+const path = require('path')
 const app = express()
 const {SESSION_SECRET, SERVER_PORT, CONNECTION_STRING} = process.env
 
@@ -42,8 +42,8 @@ app.put('/auth/update', user.changeUserInfo)
 app.get('/items/all', item.getItems)
 app.get('/items/:id', item.getItem)
 
-app.get('/items/type', item.getItemType)
-app.get('/items/attribute', item.getItemAttribute)
+app.get('/items/type/:terms', item.getItemType)
+app.get('/items/attribute/:terms', item.getItemAttribute)
 app.get('/items/cost', item.getItemCost)
 
 app.post('/items/add', item.createItem)
@@ -58,3 +58,9 @@ app.get('/cart/get', cart.getCart)
 
 
 app.listen(SERVER_PORT, () => console.log(`server listening on port ${SERVER_PORT}`))
+
+app.use( express.static( `${__dirname}/../build`));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'))
+})

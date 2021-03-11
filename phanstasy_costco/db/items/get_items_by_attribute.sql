@@ -1,2 +1,2 @@
 SELECT * FROM items 
-WHERE item_attributes LIKE (%$1%);
+WHERE item_attributes LIKE '%' || $1 || '%';

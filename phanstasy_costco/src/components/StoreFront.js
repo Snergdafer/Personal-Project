@@ -1,30 +1,22 @@
 import React, {useState, useEffect} from 'react'
 import Item from './Item'
-import axios from 'axios'
+import updateSearch from '../redux/itemsReducer'
 import { connect } from 'react-redux'
 
 const StoreFront = (props) => {
-    const [items, setItems] = useState([])
-    const {terms} = props.itemsReducer
-
+    const [storeItems, setStoreItems] = useState([])
     
-    useEffect( () => {
-        const getData = async () => {
-        console.log('effect')
-        updateStore()
-                 
-    } 
-    getData() 
-    }, [props.terms])
 
-    const updateStore = () => {
-        
-    }
+    useEffect(() => {
+        console.log('storeLoad')
+        setStoreItems(props.itemsReducer.terms)
+    },[props.itemsReducer.terms])
 
-    
+    // when redux state updates i then want to reload my storeFront with the new items
+
     return (
         <div className="Store">
-            {items.map(elem => (
+            {storeItems.map(elem => (
                 <>
                     <Item item={elem}/>
                 </>
@@ -35,4 +27,4 @@ const StoreFront = (props) => {
 
 const mapStateToProps = state => state
 
-export default connect(mapStateToProps, {})(StoreFront)
+export default connect(mapStateToProps, {updateSearch})(StoreFront)
