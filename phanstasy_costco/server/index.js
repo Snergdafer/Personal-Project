@@ -41,9 +41,11 @@ app.put('/auth/update', user.changeUserInfo)
 //item endpoints
 app.get('/items/all', item.getItems)
 app.get('/items/:id', item.getItem)
+
 app.get('/items/type', item.getItemType)
 app.get('/items/attribute', item.getItemAttribute)
 app.get('/items/cost', item.getItemCost)
+
 app.post('/items/add', item.createItem)
 app.delete('/items/remove/:id', item.deleteItem)
 app.put('/items/update', item.updateItem)

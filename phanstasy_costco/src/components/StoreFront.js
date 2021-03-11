@@ -1,20 +1,25 @@
 import React, {useState, useEffect} from 'react'
 import Item from './Item'
 import axios from 'axios'
+import { connect } from 'react-redux'
 
-const StoreFront = () => {
+const StoreFront = (props) => {
     const [items, setItems] = useState([])
-    
-    useEffect( async () => {
-        try{
-        const response = await axios.get('/items/all')
-        setItems(response.data)
-        }catch{
-            console.log('error')
-        }
-    }, [])
+    const {terms} = props.itemsReducer
 
-  
+    
+    useEffect( () => {
+        const getData = async () => {
+        console.log('effect')
+        updateStore()
+                 
+    } 
+    getData() 
+    }, [props.terms])
+
+    const updateStore = () => {
+        
+    }
 
     
     return (
@@ -28,4 +33,6 @@ const StoreFront = () => {
     )
 }
 
-export default StoreFront
+const mapStateToProps = state => state
+
+export default connect(mapStateToProps, {})(StoreFront)

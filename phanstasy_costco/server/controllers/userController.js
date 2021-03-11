@@ -52,7 +52,6 @@ module.exports = {
         const db = req.app.get('db')
         const {newUsername, newEmail, email} = req.body
         const [findUser] = await db.users.get_user(email)
-        console.log(findUser)
         const userId = findUser.user_id
         const [findDuplicate] = await db.users.get_user(newEmail)
         if(findDuplicate) {

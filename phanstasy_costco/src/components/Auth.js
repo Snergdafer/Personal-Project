@@ -11,7 +11,6 @@ const Auth = (props) => {
     const login = async (e) => {
         e.preventDefault();
         const user = await axios.post('/auth/login', {email, password})
-        console.log(user.data)
         props.loginUser(user.data)
         props.history.push('/store')
     }

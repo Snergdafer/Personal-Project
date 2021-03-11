@@ -5,39 +5,52 @@ import axios from 'axios'
 
 const Cart = () => {
     const [cart, setCart] = useState([])
-    const [emptyCart, setEmptyCart] = useState(true)
+    const [total, setTotal] = useState(0)
 
     useEffect( async () => {
-        setEmptyCart(true)
         try{
             const getCart = await axios.get('/cart/get')
-            if(getCart) {
-                setCart(getCart.data)
-                setEmptyCart(false)
-            }
+            setCart(getCart.data)
         }catch{
             console.log('Error getting cart. Log in maybe')
         }
     },[])
 
-    const removeFromCart = (id) => {
-        console.log('steve')
-        axios.delete(`/cart/remove/${id}`)
+    useEffect(() => {
+        if(cart[0]){
+        let costTotal = 0
+        cart.forEach((i) => {
+            costTotal += i.item_cost
+        })
+        setTotal(costTotal)
+        }
+    },[cart])
+
+    const removeFromCart = async (id) => {
+        const newCart = await axios.delete(`/cart/remove/${id}`)
+        setCart(newCart.data)
     }
 
-    console.log(cart[0])
+    console.log(cart)
 
     return (
         <div className="Cart">
-            {emptyCart? <h1>Your cart is empty! Go get some stuff</h1>:(
+            {!cart[0]? <h1>Your cart is empty! Go get some stuff</h1>:(
                 <>
-                {cart.map(elem => (
-                <>
-                    <Item item={elem}/>
-                    <button onClick={() => removeFromCart(elem.item_id)}>Remove</button>
-                </>
+                    <div className={'cartItems'}>
 
-            ))}</>)}
+                        {cart.map(elem => (
+                        <>
+                            <Item item={elem}/>
+                            <button onClick={() => removeFromCart(elem.cart_id)}>Remove</button>
+                        </>
+                        ))}
+
+                    </div>
+                    
+                    <h1>Total: {total}</h1>
+                </>
+            )}
         </div>
     )
 }
