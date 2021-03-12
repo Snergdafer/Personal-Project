@@ -1,8 +1,20 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import axios from 'axios'
 
 const UpdateStore = () => {
     const [items, setItems] = useState([])
+
+    useEffect(() => {
+        const func = async () => {
+            let response = await axios.get('/items/all')
+            setItems(response.data)
+        }
+        func()
+    },[])
+
+
+    //   | -This holds all the axios calls to get items by type or attribute- |
+    //   V                                                                    V
 
     const doStuff = async (terms) => {
     switch (terms) {

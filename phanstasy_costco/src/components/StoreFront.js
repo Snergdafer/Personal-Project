@@ -7,12 +7,13 @@ const StoreFront = (props) => {
     const [storeItems, setStoreItems] = useState([])
     
 
+    //This keeps this component's state up to date with Redux
     useEffect(() => {
-        console.log('storeLoad')
+        console.log('hit')
         setStoreItems(props.itemsReducer.terms)
     },[props.itemsReducer.terms])
 
-    // when redux state updates i then want to reload my storeFront with the new items
+
 
     return (
         <div className="Store">
