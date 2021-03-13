@@ -21,11 +21,20 @@ const Menu = (props) => {
         props.history.push('/')
     }
 
+    const email = async () => {
+        try{
+        await axios.post('/auth/greet')
+        }catch{
+            console.log('email function')
+        }
+    }
+
 
     return(
         <div className={`menu ${props.toggle ? 'active' : ''}`}>
             <div className={'section all'}>
 
+                <button onClick={() => email()}>SEND EMAIL</button>
                 <button onClick={() => {
                     setTerms('All')
                     props.switch()

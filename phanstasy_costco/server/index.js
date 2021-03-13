@@ -5,6 +5,7 @@ const session = require('express-session')
 const user = require('./controllers/userController')
 const item = require('./controllers/itemsController')
 const cart = require('./controllers/cartController')
+const greet = require('./controllers/nodemailer')
 const path = require('path')
 const app = express()
 const {SESSION_SECRET, SERVER_PORT, CONNECTION_STRING} = process.env
@@ -37,6 +38,7 @@ app.post('/auth/login', user.login)
 app.post('/auth/logout', user.logout)
 app.get('/auth/user', user.getUserSession)
 app.put('/auth/update', user.changeUserInfo)
+app.post('/auth/greet', greet.getInfo)
 
 //item endpoints
 app.get('/items/all', item.getItems)
