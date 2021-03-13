@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import axios from 'axios'
 import {withRouter, Link} from 'react-router-dom'
 import {logoutUser} from '../redux/userReducer'
-import UpdateStore from '../hooks/UpdateStore'
+import UpdateStore from '../hooks/UpdateStore.js'
 import {updateSearch} from '../redux/itemsReducer'
 import {connect} from 'react-redux'
 
