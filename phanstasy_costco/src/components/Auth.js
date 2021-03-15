@@ -38,7 +38,7 @@ const Auth = (props) => {
                 <button type='submit'>Login</button>
             </form>
             <Link to='/register'>
-                <button>Register</button>
+                <button className='byooton'>Register</button>
             </Link>
         </div>
     )

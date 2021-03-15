@@ -5,11 +5,17 @@
 .menu {
     width: 300px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 100px;
-    background-color: skyblue;
     @include flexCenter(column, center);
+    align-items: center;
+    padding: 10px;
+    position: absolute;
+    left: -320px; 
+    background-color: skyblue;
+}
+    
+.active {
+    transform: translate(320px, 0);
+    margin-top: 100px;
 }
 
 .section {
@@ -22,5 +28,17 @@
         font-family: inherit;
         background-color: inherit;
     }
+}
+
+@media (max-width: 450px) {
+   .menu {
+       width: 120px;
+       left: -140px;
+       font-size: .5rem;
+   }
+   .active {
+    transform: translate(140px, 0);
+   }
+
 }
 

@@ -26,16 +26,16 @@ const  AccountDetails = (props) => {
     
     
     return (
-        <div className="Auth">
+        <div className="Account">
             {!updateActive? 
-            <div>
-                <h1>{username}</h1>
-                <h1>{email}</h1>
-                <button>Change Password</button>
+            <div className='acctInfo'>
+                <h1>Username: {username}</h1>
+                <h1>Email: {email}</h1>
                 <button onClick={() => toggleUpdate()}>Update Username and Email</button>
+                <button>Change Password</button>
             </div>
             :
-            <div>
+            <div className='acctForm'>
                 <form onSubmit={update}>
                     <h1>Update Info</h1>
                     <input

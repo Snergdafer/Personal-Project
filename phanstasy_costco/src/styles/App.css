@@ -3,21 +3,28 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 100px;
-  background-color: skyblue;
-  display: flex;
   align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  flex-direction: column;
+  padding: 10px;
+  position: absolute;
+  left: -320px;
+  background-color: skyblue;
+}
+
+.active {
+  -webkit-transform: translate(320px, 0);
+          transform: translate(320px, 0);
+  margin-top: 100px;
 }
 
 .section {
@@ -45,13 +52,25 @@
   background-color: inherit;
 }
 
+@media (max-width: 450px) {
+  .menu {
+    width: 120px;
+    left: -140px;
+    font-size: .5rem;
+  }
+  .active {
+    -webkit-transform: translate(140px, 0);
+            transform: translate(140px, 0);
+  }
+}
+
 .ItemCard {
   margin: 10px;
   border: 2px outset lightgrey;
   -webkit-box-shadow: 5px, 5px, grey;
           box-shadow: 5px, 5px, grey;
-  width: 20vw;
-  height: 20vw;
+  width: 13vw;
+  height: 13vw;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -69,12 +88,32 @@
 }
 
 .ItemCard h4 {
-  font-size: 20px;
+  font-size: rem;
 }
 
 .ItemCard img {
   width: 10vw;
   margin: auto;
+}
+
+@media (max-width: 1050px) {
+  .ItemCard {
+    width: 20vw;
+    height: 20vw;
+  }
+}
+
+@media (max-width: 450px) {
+  .ItemCard {
+    width: 40vw;
+    height: 40vw;
+  }
+  .ItemCard h4 {
+    font-size: .7rem;
+  }
+  .ItemCard img {
+    width: 25vw;
+  }
 }
 
 .header {
@@ -128,7 +167,253 @@
 }
 
 .ItemDetails img {
+  width: 20vw;
+  margin: 10px;
+  border: 2px outset lightgrey;
+}
+
+.ItemDetails p {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.ItemDetails button {
+  margin: 5px;
+}
+
+@media (max-width: 1050px) {
+  .ItemDetails h1 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 450px) {
+  .ItemDetails {
+    width: 50vw;
+    font-size: .75rem;
+  }
+}
+
+.Account {
+  margin: 15px;
+}
+
+.acctInfo {
+  width: 60vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.acctInfo h1 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.acctInfo button {
+  margin: 5px;
+}
+
+.acctForm {
+  width: 60vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.acctForm form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.acctForm form input {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.acctForm form button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 450px) {
+  .Account {
+    font-size: .75rem;
+  }
+}
+
+.Cart {
+  padding-left: 40px;
+}
+
+.cartItems {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.cartItems button {
+  height: 25px;
+}
+
+.total {
+  font-size: 25px;
+  margin: 25px;
+}
+
+@media (max-width: 450px) {
+  .cartItems {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .total {
+    position: absolute;
+    top: 110px;
+    right: 10px;
+  }
+}
+
+.Auth {
+  margin-left: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 50vw;
+}
+
+.Auth form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Auth form input {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.Auth form button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.byooton {
+  width: 100%;
+}
+
+@media (max-width: 1050px) {
+  .Auth {
+    margin: auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .Auth form {
+    margin-top: 5px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .Auth form input {
+    margin: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .Auth {
+    width: 80vw;
+  }
+}
+
+.Register {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50vw;
+  margin-left: 15px;
+}
+
+.Register form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Register form input {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.Register button {
+  width: 100%;
+}
+
+@media (max-width: 1050px) {
+  .Register {
+    margin: auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .Register form {
+    margin-top: 5px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .Register form input {
+    margin: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .Auth {
+    width: 80vw;
+  }
 }
 
 .App {
@@ -141,13 +426,18 @@
           flex-direction: column;
 }
 
-.menu {
-  position: absolute;
-  left: -300px;
+html {
+  font-size: 20px;
 }
 
-.active {
-  -webkit-transform: translate(300px, 0);
-          transform: translate(300px, 0);
+@media (max-width: 1050px) {
+  html {
+    font-size: 25px;
+  }
+}
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
 }
 /*# sourceMappingURL=App.css.map */

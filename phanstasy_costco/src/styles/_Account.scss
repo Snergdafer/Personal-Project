@@ -1,0 +1,44 @@
+
+
+.Account {
+    margin: 15px;
+}
+
+.acctInfo {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    h1 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    button {
+        margin: 5px;
+    }
+}
+
+.acctForm {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    form {
+        display: flex;
+        flex-direction: column;
+        input {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        button {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+
+@media (max-width: 450px) {
+   .Account {
+       font-size: .75rem;
+   }
+
+}

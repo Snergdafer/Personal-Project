@@ -5,12 +5,12 @@
     margin: 10px;
     border: 2px outset lightgrey;
     box-shadow: 5px, 5px, grey;
-    width: 20vw;
-    height: 20vw;
+    width: 13vw;
+    height: 13vw;
     overflow: hidden;
     @include flexCenter(column, space-between);
     h4{
-        font-size: 20px;
+        font-size: rem;
     }
     img {
         width: 10vw;
@@ -18,3 +18,24 @@
     }
 }
 
+@media (max-width: 1050px) {
+    .ItemCard {
+        width: 20vw;
+        height: 20vw;
+    }
+
+}
+
+@media (max-width: 450px) {
+    .ItemCard {
+        width: 40vw;
+        height: 40vw;
+        h4 {
+            font-size: .7rem;
+        }
+        img {
+            width: 25vw;
+        }
+    }
+
+}

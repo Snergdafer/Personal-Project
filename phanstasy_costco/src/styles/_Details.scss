@@ -4,6 +4,32 @@
 .ItemDetails {
     @include flexCenter(column, center);
     img {
-        width: 50vw;
+        width: 20vw;
+        margin: 10px;
+        border: 2px outset lightgrey;
     }
+    p {
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+    button {
+        margin: 5px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .ItemDetails {
+        h1 {
+            font-size: 30px;
+        }
+    }
+
+}
+
+@media (max-width: 450px) {
+    .ItemDetails {
+        width: 50vw;
+        font-size: .75rem;
+    }
+
 }

@@ -1,0 +1,42 @@
+
+
+.Register {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    margin-left: 15px;
+    form {
+        display: flex;
+        flex-direction: column;
+        input {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    }
+    button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1050px) {
+    .Register {
+        margin: auto;
+        align-items: center;
+        form {
+            margin-top: 5px;
+            align-items: center;
+            input {
+                margin: 10px;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 450px) {
+    .Auth {
+        width: 80vw;
+        
+    }
+
+}

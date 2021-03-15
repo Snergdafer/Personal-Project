@@ -14,7 +14,7 @@ const Register = (props) => {
     }
 
     return(
-        <div>
+        <div className='Register'>
             <form onSubmit={register}>
                 <h2>Register</h2>
                 <input

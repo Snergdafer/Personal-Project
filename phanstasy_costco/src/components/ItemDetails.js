@@ -40,8 +40,8 @@ const ItemDetails = () => {
         <div className="ItemDetails">
             <h1>{item.name}</h1>
             <img src={item.image}/>
-            <p>{item.desc}</p>
-            <h1>{item.cost}</h1>
+            <p>Description: <br/>{item.desc}</p>
+            <h1>Price: {item.cost}</h1>
             <button onClick={() => addToCart(id)}>Add to cart</button>
         </div>
     )

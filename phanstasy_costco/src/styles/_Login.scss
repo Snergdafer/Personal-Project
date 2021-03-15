@@ -1,0 +1,47 @@
+.Auth {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        input{
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        button {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    }
+    
+}
+
+.byooton {
+    width: 100%;
+}
+
+@media (max-width: 1050px) {
+    .Auth {
+        margin: auto;
+        align-items: center;
+        form {
+            margin-top: 5px;
+            align-items: center;
+            input {
+                margin: 10px;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 450px) {
+    .Auth {
+        width: 80vw;
+        
+    }
+
+}

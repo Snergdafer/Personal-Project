@@ -7,7 +7,7 @@ const {MAIN_EMAIL, MAIN_PASS} = process.env
 module.exports = {
     getInfo: async(req, res) => {
 
-        const {email} = req.session.user
+        const {email, username} = req.session.user
         let transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {user: MAIN_EMAIL, pass: MAIN_PASS}
@@ -15,8 +15,8 @@ module.exports = {
         let stuff = {
             from: 'Phantasy Costco!!!',
             to: email,
-            subject: 'Test',
-            text: 'lots of stuff'
+            subject: `Hey ${username}!`,
+            text: `What's up ${username}??!? We're so glad you've clicked the email button. Congradulations on clicking the email button!`
         }
         transporter.sendMail(stuff, (error) => {
             if(error){

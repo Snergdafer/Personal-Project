@@ -5,17 +5,29 @@
 @import './Header';
 @import './StoreFront';
 @import './Details';
+@import './Account';
+@import './Cart';
+@import './Login';
+@import './Register';
 
 .App {
     display: flex;
     flex-direction: column;
 }
 
-.menu {
-    position: absolute;
-    left: -300px; 
+html {
+    font-size: 20px;
 }
 
-.active {
-    transform: translate(300px, 0);
+@media (max-width: 1050px) {
+    html {
+        font-size: 25px;
+    }
+
 }
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+

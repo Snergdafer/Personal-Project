@@ -14,7 +14,7 @@ const Header = (props) => {
 
             <div>
             {pathname === '/' && <h1>Fantasy Costco</h1>}
-            {pathname === '/store' && <h1>Store</h1>}
+            {pathname === '/store' && <h1>Fantasy Costco</h1>}
             {pathname === '/account' && <h1>Account</h1>}
             {pathname === '/cart' && <h1>Cart</h1>}
             {matchPath(pathname, {path: '/item/:id'}) && <h1>Details</h1>}
