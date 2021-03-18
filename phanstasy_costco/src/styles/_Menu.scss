@@ -1,6 +1,6 @@
 
 @import './mixIns';
-
+@import './variables';
 
 .menu {
     width: 300px;
@@ -10,7 +10,7 @@
     padding: 10px;
     position: absolute;
     left: -320px; 
-    background-color: skyblue;
+    background-color: $menu;
 }
     
 .active {
