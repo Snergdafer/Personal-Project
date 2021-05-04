@@ -301,7 +301,8 @@
 }
 
 .Auth {
-  margin-left: 15px;
+  margin: auto;
+  margin-top: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -333,13 +334,20 @@
   margin-bottom: 5px;
 }
 
+.inputs {
+  background-color: lightSeaGreen;
+  padding: 15px;
+  border-radius: 15px;
+}
+
 .byooton {
-  width: 100%;
+  width: 98%;
 }
 
 @media (max-width: 1050px) {
   .Auth {
     margin: auto;
+    margin-top: 25px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;

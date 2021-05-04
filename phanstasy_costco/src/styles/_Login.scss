@@ -1,5 +1,9 @@
+@import './variables';
+
+
 .Auth {
-    margin-left: 15px;
+    margin: auto;
+    margin-top: 25px;
     display: flex;
     flex-direction: column;
     width: 50vw;
@@ -7,6 +11,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+        
         input{
             margin-top: 5px;
             margin-bottom: 5px;
@@ -19,13 +24,20 @@
     
 }
 
+.inputs {
+    background-color: $header;
+    padding: 15px;
+    border-radius: 15px;
+}
+
 .byooton {
-    width: 100%;
+    width: 98%;
 }
 
 @media (max-width: 1050px) {
     .Auth {
         margin: auto;
+        margin-top: 25px;
         align-items: center;
         form {
             margin-top: 5px;

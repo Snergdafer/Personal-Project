@@ -11,7 +11,7 @@ const Item = (props) => {
 
     return (
         <Link to={`/item/${itemId}`}>
-            <div className="ItemCard"  onClick={() => console.log('clicked')}>
+            <div className="ItemCard">
                 <h4>{props.item.item_name}</h4>
                 <img src={props.item.item_image} className={'itemImage'}/>
             </div>
